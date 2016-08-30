@@ -26,7 +26,7 @@ public class Persona {
     return identificacion;
     
     }
-
+2
     public String getPrimer_nombre() {
         return primer_nombre;
     }
