@@ -14,12 +14,18 @@ public class Persona {
     private long identificacion;
     private String primer_nombre;
     private String primer_apellido;
+    private String genero;
     
-    public Persona(long identificacion,String primer_nombre, String primer_apellido){
+    public Persona(long identificacion,String primer_nombre, String primer_apellido, String genero){
     this.identificacion = identificacion;
     this.primer_nombre = primer_nombre;
     this.primer_apellido = primer_apellido;
+    this.genero = genero;
     
+    }
+
+    public Persona(long identificacion, String primer_nombre, String primer_apellido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public long getIndentificacion(){
@@ -48,5 +54,18 @@ public class Persona {
     public void setPrimer_apellido(String primer_apellido) {
         this.primer_apellido = primer_apellido;
     }
+
+    public long getIdentificacion() {
+        return identificacion;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     
 }
