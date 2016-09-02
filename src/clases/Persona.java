@@ -16,6 +16,7 @@ public class Persona {
     private String primer_apellido;
     private String genero;
     
+    
     public Persona(long identificacion,String primer_nombre, String primer_apellido, String genero){
     this.identificacion = identificacion;
     this.primer_nombre = primer_nombre;

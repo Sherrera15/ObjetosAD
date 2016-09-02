@@ -48,8 +48,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         cmdGuardar = new javax.swing.JButton();
         cmdMostrar = new javax.swing.JButton();
-        cmdLimpiar = new javax.swing.JButton();
         cmdMujeres = new javax.swing.JButton();
+        cmdCantidad = new javax.swing.JButton();
+        cmdLimpiar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
@@ -105,7 +106,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdGuardarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 110, -1));
+        jPanel3.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, -1));
 
         cmdMostrar.setText("Mostrar");
         cmdMostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -113,15 +114,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdMostrarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 110, -1));
-
-        cmdLimpiar.setText("Limpiar");
-        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdLimpiarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 110, -1));
+        jPanel3.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 130, -1));
 
         cmdMujeres.setText("Listar Mujeres");
         cmdMujeres.addActionListener(new java.awt.event.ActionListener() {
@@ -129,9 +122,25 @@ public class Principal extends javax.swing.JFrame {
                 cmdMujeresActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdMujeres, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 100, 110, -1));
+        jPanel3.add(cmdMujeres, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 100, 130, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 130, 180));
+        cmdCantidad.setText("Cantidad de mujeres");
+        cmdCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCantidadActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        cmdLimpiar.setText("Limpiar");
+        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 130, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 150, 200));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -269,6 +278,27 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cmdMujeresActionPerformed
 
+    private void cmdCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCantidadActionPerformed
+        // TODO add your handling code here:
+        int cont = 0;
+        String cant;
+        
+        for (int i = 0; i < v.size(); i++) {
+            if(v.get(i).getGenero().equalsIgnoreCase("Femenino")){
+            cont++;
+            
+            }
+            
+        }
+        if (cont == 0){
+        txtResultado.setText("No hay mujeres que mostrar");
+        
+        }
+        
+        cant = String.valueOf(cont);
+        txtResultado.setText ("La cantidad de mujeres es"+ cant);
+    }//GEN-LAST:event_cmdCantidadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -306,6 +336,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cmbGenero;
+    private javax.swing.JButton cmdCantidad;
     private javax.swing.JButton cmdGuardar;
     private javax.swing.JButton cmdLimpiar;
     private javax.swing.JButton cmdMostrar;
